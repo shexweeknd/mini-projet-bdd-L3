@@ -1,0 +1,1043 @@
+@charset "UTF-8";
+@-webkit-keyframes typed {
+  /* string 1, char 1 */
+  0%, 0.5942380952% {
+    content: "D";
+  }
+  /* string 1, char 2 */
+  0.5952380952%, 1.1894761905% {
+    content: "Dé";
+  }
+  /* string 1, char 3 */
+  1.1904761905%, 1.7847142857% {
+    content: "Dév";
+  }
+  /* string 1, char 4 */
+  1.7857142857%, 2.379952381% {
+    content: "Déve";
+  }
+  /* string 1, char 5 */
+  2.380952381%, 2.9751904762% {
+    content: "Dével";
+  }
+  /* string 1, char 6 */
+  2.9761904762%, 3.5704285714% {
+    content: "Dévelo";
+  }
+  /* string 1, char 7 */
+  3.5714285714%, 4.1656666667% {
+    content: "Dévelop";
+  }
+  /* string 1, char 8 */
+  4.1666666667%, 4.7609047619% {
+    content: "Développ";
+  }
+  /* string 1, char 9 */
+  4.7619047619%, 5.3561428571% {
+    content: "Développe";
+  }
+  /* string 1, char 10 */
+  5.3571428571%, 5.9513809524% {
+    content: "Développem";
+  }
+  /* string 1, char 11 */
+  5.9523809524%, 6.5466190476% {
+    content: "Développeme";
+  }
+  /* string 1, char 12 */
+  6.5476190476%, 7.1418571429% {
+    content: "Développemen";
+  }
+  /* string 1, char 13 */
+  7.1428571429%, 7.7370952381% {
+    content: "Développement";
+  }
+  /* string 1, char 14 */
+  7.7380952381%, 8.3323333333% {
+    content: "Développement ";
+  }
+  /* string 1, char 15 */
+  8.3333333333%, 8.9275714286% {
+    content: "Développement d";
+  }
+  /* string 1, char 16 */
+  8.9285714286%, 9.5228095238% {
+    content: "Développement d'";
+  }
+  /* string 1, char 17 */
+  9.5238095238%, 10.118047619% {
+    content: "Développement d'a";
+  }
+  /* string 1, char 18 */
+  10.119047619%, 10.7132857143% {
+    content: "Développement d'ap";
+  }
+  /* string 1, char 19 */
+  10.7142857143%, 11.3085238095% {
+    content: "Développement d'app";
+  }
+  /* string 1, char 20 */
+  11.3095238095%, 11.9037619048% {
+    content: "Développement d'appl";
+  }
+  /* string 1, char 21 */
+  11.9047619048%, 12.499% {
+    content: "Développement d'appli";
+  }
+  /* string 1, char 22 */
+  12.5%, 13.0942380952% {
+    content: "Développement d'applic";
+  }
+  /* string 1, char 23 */
+  13.0952380952%, 13.6894761905% {
+    content: "Développement d'applica";
+  }
+  /* string 1, char 24 */
+  13.6904761905%, 14.2847142857% {
+    content: "Développement d'applicat";
+  }
+  /* string 1, char 25 */
+  14.2857142857%, 14.879952381% {
+    content: "Développement d'applicati";
+  }
+  /* string 1, char 26 */
+  14.880952381%, 15.4751904762% {
+    content: "Développement d'applicatio";
+  }
+  /* string 1, char 27 */
+  15.4761904762%, 16.0704285714% {
+    content: "Développement d'application";
+  }
+  /* string 1, char 28 */
+  16.0714285714%, 16.6656666667% {
+    content: "Développement d'applications";
+  }
+  /* string 1, char 29 */
+  16.6666666667%, 17.2609047619% {
+    content: "Développement d'applications ";
+  }
+  /* string 1, char 30 */
+  17.2619047619%, 17.8561428571% {
+    content: "Développement d'applications W";
+  }
+  /* string 1, char 31 */
+  17.8571428571%, 18.4513809524% {
+    content: "Développement d'applications We";
+  }
+  /* string 1, char 32 */
+  18.4523809524%, 31.4275714286% {
+    content: "Développement d'applications Web";
+  }
+  /* string 1, char 33 */
+  31.4285714286%, 31.9037619048% {
+    content: "Développement d'applications We";
+  }
+  /* string 1, char 34 */
+  31.9047619048%, 32.379952381% {
+    content: "Développement d'applications W";
+  }
+  /* string 1, char 35 */
+  32.380952381%, 32.8561428571% {
+    content: "Développement d'applications ";
+  }
+  /* string 1, char 36 */
+  32.8571428571%, 33.3323333333% {
+    content: "Développement d'applications";
+  }
+  /* string 1, char 37 */
+  33.3333333333%, 33.8085238095% {
+    content: "Développement d'application";
+  }
+  /* string 1, char 38 */
+  33.8095238095%, 34.2847142857% {
+    content: "Développement d'applicatio";
+  }
+  /* string 1, char 39 */
+  34.2857142857%, 34.7609047619% {
+    content: "Développement d'applicati";
+  }
+  /* string 1, char 40 */
+  34.7619047619%, 35.2370952381% {
+    content: "Développement d'applicat";
+  }
+  /* string 1, char 41 */
+  35.2380952381%, 35.7132857143% {
+    content: "Développement d'applica";
+  }
+  /* string 1, char 42 */
+  35.7142857143%, 36.1894761905% {
+    content: "Développement d'applic";
+  }
+  /* string 1, char 43 */
+  36.1904761905%, 36.6656666667% {
+    content: "Développement d'appli";
+  }
+  /* string 1, char 44 */
+  36.6666666667%, 37.1418571429% {
+    content: "Développement d'appl";
+  }
+  /* string 1, char 45 */
+  37.1428571429%, 37.618047619% {
+    content: "Développement d'app";
+  }
+  /* string 1, char 46 */
+  37.619047619%, 38.0942380952% {
+    content: "Développement d'ap";
+  }
+  /* string 1, char 47 */
+  38.0952380952%, 38.5704285714% {
+    content: "Développement d'a";
+  }
+  /* string 1, char 48 */
+  38.5714285714%, 39.0466190476% {
+    content: "Développement d'";
+  }
+  /* string 1, char 49 */
+  39.0476190476%, 39.5228095238% {
+    content: "Développement d";
+  }
+  /* string 1, char 50 */
+  39.5238095238%, 39.999% {
+    content: "Développement ";
+  }
+  /* string 1, char 51 */
+  40%, 40.4751904762% {
+    content: "Développement";
+  }
+  /* string 1, char 52 */
+  40.4761904762%, 40.9513809524% {
+    content: "Développemen";
+  }
+  /* string 1, char 53 */
+  40.9523809524%, 41.4275714286% {
+    content: "Développeme";
+  }
+  /* string 1, char 54 */
+  41.4285714286%, 41.9037619048% {
+    content: "Développem";
+  }
+  /* string 1, char 55 */
+  41.9047619048%, 42.379952381% {
+    content: "Développe";
+  }
+  /* string 1, char 56 */
+  42.380952381%, 42.8561428571% {
+    content: "Développ";
+  }
+  /* string 1, char 57 */
+  42.8571428571%, 43.3323333333% {
+    content: "Dévelop";
+  }
+  /* string 1, char 58 */
+  43.3333333333%, 43.8085238095% {
+    content: "Dévelo";
+  }
+  /* string 1, char 59 */
+  43.8095238095%, 44.2847142857% {
+    content: "Dével";
+  }
+  /* string 1, char 60 */
+  44.2857142857%, 44.7609047619% {
+    content: "Déve";
+  }
+  /* string 1, char 61 */
+  44.7619047619%, 45.2370952381% {
+    content: "Dév";
+  }
+  /* string 1, char 62 */
+  45.2380952381%, 45.7132857143% {
+    content: "Dé";
+  }
+  /* string 1, char 63 */
+  45.7142857143%, 46.1894761905% {
+    content: "D";
+  }
+  /* string 1, char 64 */
+  46.1904761905%, 52.1418571429% {
+    content: "​";
+  }
+  /* string 2, char 1 */
+  52.1428571429%, 52.7370952381% {
+    content: "A";
+  }
+  /* string 2, char 2 */
+  52.7380952381%, 53.3323333333% {
+    content: "Ad";
+  }
+  /* string 2, char 3 */
+  53.3333333333%, 53.9275714286% {
+    content: "Adm";
+  }
+  /* string 2, char 4 */
+  53.9285714286%, 54.5228095238% {
+    content: "Admi";
+  }
+  /* string 2, char 5 */
+  54.5238095238%, 55.118047619% {
+    content: "Admin";
+  }
+  /* string 2, char 6 */
+  55.119047619%, 55.7132857143% {
+    content: "Admini";
+  }
+  /* string 2, char 7 */
+  55.7142857143%, 56.3085238095% {
+    content: "Adminis";
+  }
+  /* string 2, char 8 */
+  56.3095238095%, 56.9037619048% {
+    content: "Administ";
+  }
+  /* string 2, char 9 */
+  56.9047619048%, 57.499% {
+    content: "Administr";
+  }
+  /* string 2, char 10 */
+  57.5%, 58.0942380952% {
+    content: "Administra";
+  }
+  /* string 2, char 11 */
+  58.0952380952%, 58.6894761905% {
+    content: "Administrat";
+  }
+  /* string 2, char 12 */
+  58.6904761905%, 59.2847142857% {
+    content: "Administrati";
+  }
+  /* string 2, char 13 */
+  59.2857142857%, 59.879952381% {
+    content: "Administratio";
+  }
+  /* string 2, char 14 */
+  59.880952381%, 60.4751904762% {
+    content: "Administration";
+  }
+  /* string 2, char 15 */
+  60.4761904762%, 61.0704285714% {
+    content: "Administration ";
+  }
+  /* string 2, char 16 */
+  61.0714285714%, 61.6656666667% {
+    content: "Administration S";
+  }
+  /* string 2, char 17 */
+  61.6666666667%, 62.2609047619% {
+    content: "Administration Sy";
+  }
+  /* string 2, char 18 */
+  62.2619047619%, 62.8561428571% {
+    content: "Administration Sys";
+  }
+  /* string 2, char 19 */
+  62.8571428571%, 63.4513809524% {
+    content: "Administration Syst";
+  }
+  /* string 2, char 20 */
+  63.4523809524%, 64.0466190476% {
+    content: "Administration Syste";
+  }
+  /* string 2, char 21 */
+  64.0476190476%, 64.6418571429% {
+    content: "Administration System";
+  }
+  /* string 2, char 22 */
+  64.6428571429%, 65.2370952381% {
+    content: "Administration Systeme";
+  }
+  /* string 2, char 23 */
+  65.2380952381%, 65.8323333333% {
+    content: "Administration Systeme ";
+  }
+  /* string 2, char 24 */
+  65.8333333333%, 66.4275714286% {
+    content: "Administration Systeme L";
+  }
+  /* string 2, char 25 */
+  66.4285714286%, 67.0228095238% {
+    content: "Administration Systeme Li";
+  }
+  /* string 2, char 26 */
+  67.0238095238%, 67.618047619% {
+    content: "Administration Systeme Lin";
+  }
+  /* string 2, char 27 */
+  67.619047619%, 68.2132857143% {
+    content: "Administration Systeme Linu";
+  }
+  /* string 2, char 28 */
+  68.2142857143%, 81.1894761905% {
+    content: "Administration Systeme Linux";
+  }
+  /* string 2, char 29 */
+  81.1904761905%, 81.6656666667% {
+    content: "Administration Systeme Linu";
+  }
+  /* string 2, char 30 */
+  81.6666666667%, 82.1418571429% {
+    content: "Administration Systeme Lin";
+  }
+  /* string 2, char 31 */
+  82.1428571429%, 82.618047619% {
+    content: "Administration Systeme Li";
+  }
+  /* string 2, char 32 */
+  82.619047619%, 83.0942380952% {
+    content: "Administration Systeme L";
+  }
+  /* string 2, char 33 */
+  83.0952380952%, 83.5704285714% {
+    content: "Administration Systeme ";
+  }
+  /* string 2, char 34 */
+  83.5714285714%, 84.0466190476% {
+    content: "Administration Systeme";
+  }
+  /* string 2, char 35 */
+  84.0476190476%, 84.5228095238% {
+    content: "Administration System";
+  }
+  /* string 2, char 36 */
+  84.5238095238%, 84.999% {
+    content: "Administration Syste";
+  }
+  /* string 2, char 37 */
+  85%, 85.4751904762% {
+    content: "Administration Syst";
+  }
+  /* string 2, char 38 */
+  85.4761904762%, 85.9513809524% {
+    content: "Administration Sys";
+  }
+  /* string 2, char 39 */
+  85.9523809524%, 86.4275714286% {
+    content: "Administration Sy";
+  }
+  /* string 2, char 40 */
+  86.4285714286%, 86.9037619048% {
+    content: "Administration S";
+  }
+  /* string 2, char 41 */
+  86.9047619048%, 87.379952381% {
+    content: "Administration ";
+  }
+  /* string 2, char 42 */
+  87.380952381%, 87.8561428571% {
+    content: "Administration";
+  }
+  /* string 2, char 43 */
+  87.8571428571%, 88.3323333333% {
+    content: "Administratio";
+  }
+  /* string 2, char 44 */
+  88.3333333333%, 88.8085238095% {
+    content: "Administrati";
+  }
+  /* string 2, char 45 */
+  88.8095238095%, 89.2847142857% {
+    content: "Administrat";
+  }
+  /* string 2, char 46 */
+  89.2857142857%, 89.7609047619% {
+    content: "Administra";
+  }
+  /* string 2, char 47 */
+  89.7619047619%, 90.2370952381% {
+    content: "Administr";
+  }
+  /* string 2, char 48 */
+  90.2380952381%, 90.7132857143% {
+    content: "Administ";
+  }
+  /* string 2, char 49 */
+  90.7142857143%, 91.1894761905% {
+    content: "Adminis";
+  }
+  /* string 2, char 50 */
+  91.1904761905%, 91.6656666667% {
+    content: "Admini";
+  }
+  /* string 2, char 51 */
+  91.6666666667%, 92.1418571429% {
+    content: "Admin";
+  }
+  /* string 2, char 52 */
+  92.1428571429%, 92.618047619% {
+    content: "Admi";
+  }
+  /* string 2, char 53 */
+  92.619047619%, 93.0942380952% {
+    content: "Adm";
+  }
+  /* string 2, char 54 */
+  93.0952380952%, 93.5704285714% {
+    content: "Ad";
+  }
+  /* string 2, char 55 */
+  93.5714285714%, 94.0466190476% {
+    content: "A";
+  }
+  /* string 2, char 56 */
+  94.0476190476%, 100% {
+    content: "​";
+  }
+}
+@keyframes typed {
+  /* string 1, char 1 */
+  0%, 0.5942380952% {
+    content: "D";
+  }
+  /* string 1, char 2 */
+  0.5952380952%, 1.1894761905% {
+    content: "Dé";
+  }
+  /* string 1, char 3 */
+  1.1904761905%, 1.7847142857% {
+    content: "Dév";
+  }
+  /* string 1, char 4 */
+  1.7857142857%, 2.379952381% {
+    content: "Déve";
+  }
+  /* string 1, char 5 */
+  2.380952381%, 2.9751904762% {
+    content: "Dével";
+  }
+  /* string 1, char 6 */
+  2.9761904762%, 3.5704285714% {
+    content: "Dévelo";
+  }
+  /* string 1, char 7 */
+  3.5714285714%, 4.1656666667% {
+    content: "Dévelop";
+  }
+  /* string 1, char 8 */
+  4.1666666667%, 4.7609047619% {
+    content: "Développ";
+  }
+  /* string 1, char 9 */
+  4.7619047619%, 5.3561428571% {
+    content: "Développe";
+  }
+  /* string 1, char 10 */
+  5.3571428571%, 5.9513809524% {
+    content: "Développem";
+  }
+  /* string 1, char 11 */
+  5.9523809524%, 6.5466190476% {
+    content: "Développeme";
+  }
+  /* string 1, char 12 */
+  6.5476190476%, 7.1418571429% {
+    content: "Développemen";
+  }
+  /* string 1, char 13 */
+  7.1428571429%, 7.7370952381% {
+    content: "Développement";
+  }
+  /* string 1, char 14 */
+  7.7380952381%, 8.3323333333% {
+    content: "Développement ";
+  }
+  /* string 1, char 15 */
+  8.3333333333%, 8.9275714286% {
+    content: "Développement d";
+  }
+  /* string 1, char 16 */
+  8.9285714286%, 9.5228095238% {
+    content: "Développement d'";
+  }
+  /* string 1, char 17 */
+  9.5238095238%, 10.118047619% {
+    content: "Développement d'a";
+  }
+  /* string 1, char 18 */
+  10.119047619%, 10.7132857143% {
+    content: "Développement d'ap";
+  }
+  /* string 1, char 19 */
+  10.7142857143%, 11.3085238095% {
+    content: "Développement d'app";
+  }
+  /* string 1, char 20 */
+  11.3095238095%, 11.9037619048% {
+    content: "Développement d'appl";
+  }
+  /* string 1, char 21 */
+  11.9047619048%, 12.499% {
+    content: "Développement d'appli";
+  }
+  /* string 1, char 22 */
+  12.5%, 13.0942380952% {
+    content: "Développement d'applic";
+  }
+  /* string 1, char 23 */
+  13.0952380952%, 13.6894761905% {
+    content: "Développement d'applica";
+  }
+  /* string 1, char 24 */
+  13.6904761905%, 14.2847142857% {
+    content: "Développement d'applicat";
+  }
+  /* string 1, char 25 */
+  14.2857142857%, 14.879952381% {
+    content: "Développement d'applicati";
+  }
+  /* string 1, char 26 */
+  14.880952381%, 15.4751904762% {
+    content: "Développement d'applicatio";
+  }
+  /* string 1, char 27 */
+  15.4761904762%, 16.0704285714% {
+    content: "Développement d'application";
+  }
+  /* string 1, char 28 */
+  16.0714285714%, 16.6656666667% {
+    content: "Développement d'applications";
+  }
+  /* string 1, char 29 */
+  16.6666666667%, 17.2609047619% {
+    content: "Développement d'applications ";
+  }
+  /* string 1, char 30 */
+  17.2619047619%, 17.8561428571% {
+    content: "Développement d'applications W";
+  }
+  /* string 1, char 31 */
+  17.8571428571%, 18.4513809524% {
+    content: "Développement d'applications We";
+  }
+  /* string 1, char 32 */
+  18.4523809524%, 31.4275714286% {
+    content: "Développement d'applications Web";
+  }
+  /* string 1, char 33 */
+  31.4285714286%, 31.9037619048% {
+    content: "Développement d'applications We";
+  }
+  /* string 1, char 34 */
+  31.9047619048%, 32.379952381% {
+    content: "Développement d'applications W";
+  }
+  /* string 1, char 35 */
+  32.380952381%, 32.8561428571% {
+    content: "Développement d'applications ";
+  }
+  /* string 1, char 36 */
+  32.8571428571%, 33.3323333333% {
+    content: "Développement d'applications";
+  }
+  /* string 1, char 37 */
+  33.3333333333%, 33.8085238095% {
+    content: "Développement d'application";
+  }
+  /* string 1, char 38 */
+  33.8095238095%, 34.2847142857% {
+    content: "Développement d'applicatio";
+  }
+  /* string 1, char 39 */
+  34.2857142857%, 34.7609047619% {
+    content: "Développement d'applicati";
+  }
+  /* string 1, char 40 */
+  34.7619047619%, 35.2370952381% {
+    content: "Développement d'applicat";
+  }
+  /* string 1, char 41 */
+  35.2380952381%, 35.7132857143% {
+    content: "Développement d'applica";
+  }
+  /* string 1, char 42 */
+  35.7142857143%, 36.1894761905% {
+    content: "Développement d'applic";
+  }
+  /* string 1, char 43 */
+  36.1904761905%, 36.6656666667% {
+    content: "Développement d'appli";
+  }
+  /* string 1, char 44 */
+  36.6666666667%, 37.1418571429% {
+    content: "Développement d'appl";
+  }
+  /* string 1, char 45 */
+  37.1428571429%, 37.618047619% {
+    content: "Développement d'app";
+  }
+  /* string 1, char 46 */
+  37.619047619%, 38.0942380952% {
+    content: "Développement d'ap";
+  }
+  /* string 1, char 47 */
+  38.0952380952%, 38.5704285714% {
+    content: "Développement d'a";
+  }
+  /* string 1, char 48 */
+  38.5714285714%, 39.0466190476% {
+    content: "Développement d'";
+  }
+  /* string 1, char 49 */
+  39.0476190476%, 39.5228095238% {
+    content: "Développement d";
+  }
+  /* string 1, char 50 */
+  39.5238095238%, 39.999% {
+    content: "Développement ";
+  }
+  /* string 1, char 51 */
+  40%, 40.4751904762% {
+    content: "Développement";
+  }
+  /* string 1, char 52 */
+  40.4761904762%, 40.9513809524% {
+    content: "Développemen";
+  }
+  /* string 1, char 53 */
+  40.9523809524%, 41.4275714286% {
+    content: "Développeme";
+  }
+  /* string 1, char 54 */
+  41.4285714286%, 41.9037619048% {
+    content: "Développem";
+  }
+  /* string 1, char 55 */
+  41.9047619048%, 42.379952381% {
+    content: "Développe";
+  }
+  /* string 1, char 56 */
+  42.380952381%, 42.8561428571% {
+    content: "Développ";
+  }
+  /* string 1, char 57 */
+  42.8571428571%, 43.3323333333% {
+    content: "Dévelop";
+  }
+  /* string 1, char 58 */
+  43.3333333333%, 43.8085238095% {
+    content: "Dévelo";
+  }
+  /* string 1, char 59 */
+  43.8095238095%, 44.2847142857% {
+    content: "Dével";
+  }
+  /* string 1, char 60 */
+  44.2857142857%, 44.7609047619% {
+    content: "Déve";
+  }
+  /* string 1, char 61 */
+  44.7619047619%, 45.2370952381% {
+    content: "Dév";
+  }
+  /* string 1, char 62 */
+  45.2380952381%, 45.7132857143% {
+    content: "Dé";
+  }
+  /* string 1, char 63 */
+  45.7142857143%, 46.1894761905% {
+    content: "D";
+  }
+  /* string 1, char 64 */
+  46.1904761905%, 52.1418571429% {
+    content: "​";
+  }
+  /* string 2, char 1 */
+  52.1428571429%, 52.7370952381% {
+    content: "A";
+  }
+  /* string 2, char 2 */
+  52.7380952381%, 53.3323333333% {
+    content: "Ad";
+  }
+  /* string 2, char 3 */
+  53.3333333333%, 53.9275714286% {
+    content: "Adm";
+  }
+  /* string 2, char 4 */
+  53.9285714286%, 54.5228095238% {
+    content: "Admi";
+  }
+  /* string 2, char 5 */
+  54.5238095238%, 55.118047619% {
+    content: "Admin";
+  }
+  /* string 2, char 6 */
+  55.119047619%, 55.7132857143% {
+    content: "Admini";
+  }
+  /* string 2, char 7 */
+  55.7142857143%, 56.3085238095% {
+    content: "Adminis";
+  }
+  /* string 2, char 8 */
+  56.3095238095%, 56.9037619048% {
+    content: "Administ";
+  }
+  /* string 2, char 9 */
+  56.9047619048%, 57.499% {
+    content: "Administr";
+  }
+  /* string 2, char 10 */
+  57.5%, 58.0942380952% {
+    content: "Administra";
+  }
+  /* string 2, char 11 */
+  58.0952380952%, 58.6894761905% {
+    content: "Administrat";
+  }
+  /* string 2, char 12 */
+  58.6904761905%, 59.2847142857% {
+    content: "Administrati";
+  }
+  /* string 2, char 13 */
+  59.2857142857%, 59.879952381% {
+    content: "Administratio";
+  }
+  /* string 2, char 14 */
+  59.880952381%, 60.4751904762% {
+    content: "Administration";
+  }
+  /* string 2, char 15 */
+  60.4761904762%, 61.0704285714% {
+    content: "Administration ";
+  }
+  /* string 2, char 16 */
+  61.0714285714%, 61.6656666667% {
+    content: "Administration S";
+  }
+  /* string 2, char 17 */
+  61.6666666667%, 62.2609047619% {
+    content: "Administration Sy";
+  }
+  /* string 2, char 18 */
+  62.2619047619%, 62.8561428571% {
+    content: "Administration Sys";
+  }
+  /* string 2, char 19 */
+  62.8571428571%, 63.4513809524% {
+    content: "Administration Syst";
+  }
+  /* string 2, char 20 */
+  63.4523809524%, 64.0466190476% {
+    content: "Administration Syste";
+  }
+  /* string 2, char 21 */
+  64.0476190476%, 64.6418571429% {
+    content: "Administration System";
+  }
+  /* string 2, char 22 */
+  64.6428571429%, 65.2370952381% {
+    content: "Administration Systeme";
+  }
+  /* string 2, char 23 */
+  65.2380952381%, 65.8323333333% {
+    content: "Administration Systeme ";
+  }
+  /* string 2, char 24 */
+  65.8333333333%, 66.4275714286% {
+    content: "Administration Systeme L";
+  }
+  /* string 2, char 25 */
+  66.4285714286%, 67.0228095238% {
+    content: "Administration Systeme Li";
+  }
+  /* string 2, char 26 */
+  67.0238095238%, 67.618047619% {
+    content: "Administration Systeme Lin";
+  }
+  /* string 2, char 27 */
+  67.619047619%, 68.2132857143% {
+    content: "Administration Systeme Linu";
+  }
+  /* string 2, char 28 */
+  68.2142857143%, 81.1894761905% {
+    content: "Administration Systeme Linux";
+  }
+  /* string 2, char 29 */
+  81.1904761905%, 81.6656666667% {
+    content: "Administration Systeme Linu";
+  }
+  /* string 2, char 30 */
+  81.6666666667%, 82.1418571429% {
+    content: "Administration Systeme Lin";
+  }
+  /* string 2, char 31 */
+  82.1428571429%, 82.618047619% {
+    content: "Administration Systeme Li";
+  }
+  /* string 2, char 32 */
+  82.619047619%, 83.0942380952% {
+    content: "Administration Systeme L";
+  }
+  /* string 2, char 33 */
+  83.0952380952%, 83.5704285714% {
+    content: "Administration Systeme ";
+  }
+  /* string 2, char 34 */
+  83.5714285714%, 84.0466190476% {
+    content: "Administration Systeme";
+  }
+  /* string 2, char 35 */
+  84.0476190476%, 84.5228095238% {
+    content: "Administration System";
+  }
+  /* string 2, char 36 */
+  84.5238095238%, 84.999% {
+    content: "Administration Syste";
+  }
+  /* string 2, char 37 */
+  85%, 85.4751904762% {
+    content: "Administration Syst";
+  }
+  /* string 2, char 38 */
+  85.4761904762%, 85.9513809524% {
+    content: "Administration Sys";
+  }
+  /* string 2, char 39 */
+  85.9523809524%, 86.4275714286% {
+    content: "Administration Sy";
+  }
+  /* string 2, char 40 */
+  86.4285714286%, 86.9037619048% {
+    content: "Administration S";
+  }
+  /* string 2, char 41 */
+  86.9047619048%, 87.379952381% {
+    content: "Administration ";
+  }
+  /* string 2, char 42 */
+  87.380952381%, 87.8561428571% {
+    content: "Administration";
+  }
+  /* string 2, char 43 */
+  87.8571428571%, 88.3323333333% {
+    content: "Administratio";
+  }
+  /* string 2, char 44 */
+  88.3333333333%, 88.8085238095% {
+    content: "Administrati";
+  }
+  /* string 2, char 45 */
+  88.8095238095%, 89.2847142857% {
+    content: "Administrat";
+  }
+  /* string 2, char 46 */
+  89.2857142857%, 89.7609047619% {
+    content: "Administra";
+  }
+  /* string 2, char 47 */
+  89.7619047619%, 90.2370952381% {
+    content: "Administr";
+  }
+  /* string 2, char 48 */
+  90.2380952381%, 90.7132857143% {
+    content: "Administ";
+  }
+  /* string 2, char 49 */
+  90.7142857143%, 91.1894761905% {
+    content: "Adminis";
+  }
+  /* string 2, char 50 */
+  91.1904761905%, 91.6656666667% {
+    content: "Admini";
+  }
+  /* string 2, char 51 */
+  91.6666666667%, 92.1418571429% {
+    content: "Admin";
+  }
+  /* string 2, char 52 */
+  92.1428571429%, 92.618047619% {
+    content: "Admi";
+  }
+  /* string 2, char 53 */
+  92.619047619%, 93.0942380952% {
+    content: "Adm";
+  }
+  /* string 2, char 54 */
+  93.0952380952%, 93.5704285714% {
+    content: "Ad";
+  }
+  /* string 2, char 55 */
+  93.5714285714%, 94.0466190476% {
+    content: "A";
+  }
+  /* string 2, char 56 */
+  94.0476190476%, 100% {
+    content: "​";
+  }
+}
+@-webkit-keyframes beam-blink {
+  75% {
+    border-color: transparent;
+  }
+}
+@keyframes beam-blink {
+  75% {
+    border-color: transparent;
+  }
+}
+* {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #000;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.125), rgba(255, 255, 255, 0)), linear-gradient(to bottom, #000, #000 2px, #111 3px);
+  background-repeat: repeat-y;
+  background-position: center center;
+  background-size: cover, 100% 3px;
+  font-size: calc(10px + 2vw);
+  font-family: "VT323", monospace, sans-serif;
+  color: #3f3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body::after {
+  content: "​";
+  position: relative;
+  top: -13px;
+  display: inline-block;
+  padding-right: 3px;
+  padding-right: calc(3px + 0.1vw);
+  border-right: 10px solid rgba(51, 255, 51, 0.75);
+  border-right: calc(1.1vw + 4px) solid rgba(51, 255, 51, 0.75);
+  text-shadow: 0 0 5px rgba(51, 255, 51, 0.75);
+  white-space: nowrap;
+  -webkit-animation: typed 16.8s linear 1s infinite, beam-blink 1s infinite;
+          animation: typed 16.8s linear 1s infinite, beam-blink 1s infinite;
+}
+@media (max-width: 575px) {
+  body::after {
+    top: -33px;
+  }
+}
+body::before {
+  content: "2 strings / 60 chars / 16.8s duration";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 3px 0;
+  background: #00f;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 0.7px;
+  white-space: pre-wrap;
+}
+@media (max-width: 575px) {
+  body::before {
+    content: "2 strings \a 60 chars \a 16.8s duration";
+  }
+}
