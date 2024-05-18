@@ -1,6 +1,9 @@
 <?php
-    $user = 'if0_36566229';
-    $pass = 'MO3oTWVw5K7';
-    $host= 'sql301.infinityfree.com';
-    $db = 'if0_36566229_messagerie_mini_projet';
-    $dbport = '3306';
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
+
+$user = 'new_user';
+$pass = 'new_password';
+$host = 'localhost';
+$db = 'message_bdd';
+$dbport = '3306';

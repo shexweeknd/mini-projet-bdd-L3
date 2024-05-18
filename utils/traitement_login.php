@@ -1,4 +1,7 @@
 <?php
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
+
 include("../utils/fonction.php");
 session_start();
 $email = $_POST['email'];
