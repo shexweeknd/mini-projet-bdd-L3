@@ -3,15 +3,11 @@
 // error_reporting(E_ALL);
 // ini_set("display_errors", 1);
 
-
 include_once "fonction.php";
-include_once "sendMail.php";
 require "database.php";
 
 function getClientInfo($email, $dbh)
 {
-    //TOTEST verifier si le client est bien présent dans la liste des users du site
-
     //verifier si le client existe dans la table users
     $query = "SELECT * FROM users WHERE email = :email";
 

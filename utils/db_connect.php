@@ -1,8 +1,8 @@
 <?php
-  $server = "db5013327519.hosting-data.io";
-	$username = "dbu2518744";
-	$password = "Exxolia09062023xZk#";
-	$db = "dbs11176156";
+  $server = "sql301.infinityfree.com";
+	$username = "if0_36566229";
+	$password = "MO3oTWVw5K7";
+	$db = "if0_36566229_messagerie_mini_projet";
 
   $conn =  mysqli_connect($server, $username, $password, $db);
 ?>
