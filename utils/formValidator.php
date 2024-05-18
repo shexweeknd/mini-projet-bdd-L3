@@ -1,6 +1,6 @@
 <?php
 ob_start();
-// ce fichier contiendra les validateurs de formulaire
+// ce fichier contiendra les validateurs des formulaires d'inscriptions
 
 //le nom doit avoir plus de 4 caracteres et doit etre seulement en Alphabétique
 function validateNom($nom)

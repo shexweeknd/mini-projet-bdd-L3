@@ -22,13 +22,13 @@ $response = validateSigninEmail($email);
 
 if (empty($response)) {
     $mdp = $mdpTwo;
-    $response = insertUser($nom, $prenom, $email, $mdp, $birthdate);
+    $response = insertUser($nom, $prenom, $email, $mdp);
 
     if ($response['type'] == '1') {
-        header("location:../pages/auth.php?message=" . $response['status_message'] . "&err=0");
+        header("location:../index.php?message=" . $response['status_message'] . "&err=0");
     } else {
-        header("location:../pages/auth.php?message=" . $response['status_message'] . "&err=1");
+        header("location:../index.php?message=" . $response['status_message'] . "&err=1");
     }
 } else {
-    header("location:../pages/auth.php?message=" . $response['status_message'] . "&err=" . $response["err"]);
+    header("location:../index.php?message=" . $response['status_message'] . "&err=" . $response["err"]);
 }

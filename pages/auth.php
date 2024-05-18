@@ -140,6 +140,11 @@ if (isset($_SESSION['username'])) {
     .auth-content .form-container {
         transition: transform 1.5s ease-in-out;
     }
+
+    .alert {
+        position: absolute;
+        top: 2rem;
+    }
 </style>
 
 <section class="auth-section about-section">
