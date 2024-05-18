@@ -6,14 +6,13 @@ include_once "elements/header.php";
 
 <!-- protection de la page -->
 <?php
-//verifier si des parametres URL sont pris en compte dans l'url
-$redirect = "index.php";
+$redirect = "pages/acceuil.php";
 
 if (isset($_GET['redirect'])) {
     $redirect = $_GET['redirect'];
 }
 
-if (isset($_SESSION['smailia'])) {
+if (isset($_SESSION['username'])) {
 ?>
     <script>
         window.location.href = "<?php echo $redirect; ?>"

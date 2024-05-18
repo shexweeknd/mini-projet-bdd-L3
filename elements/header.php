@@ -1,8 +1,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $_SESSION['username'] . ' | canal de messagerie' ?></title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo-mail.png" />
+    <title>
+    <?php  
+        if (isset($_SESSION['username'])) {
+            $display = $_SESSION['username'];
+        } else {
+            $display = 'Authentification';
+        }
+        echo $display . ' | canal de messagerie'
+    ?>
+    </title>
+    <link rel="shortcut icon" type="image/png" href="assets/img/logo-mail.png" />
     <link rel="stylesheet" href="../assets/css/shexweeknd.css">
 
     <link href="../assets/css/aos-2.3.1.css" rel="stylesheet">

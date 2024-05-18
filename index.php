@@ -3,7 +3,11 @@
 
 <body class="bg">
     <?php
-    include_once 'pages/auth.php';
+    if (!isset($_SESSION['username'])) {
+        include_once 'pages/auth.php';
+    } else {
+        include_once 'pages/acceuil.php';
+    }
     ?>
 </body>
 

@@ -114,13 +114,6 @@
     </div>
     <div style="width: 100%; display: inline-flex; justify-content: center; align-items: center; gap: .5rem">
         <button type="submit" id="submit" style="justify-self: center;" class="button-5">Créer</button>
-        <div>
-            <div id="g_id_onload" data-client_id="362732742495-o9li5a6sng8556fkdcdskm7spitduhlq.apps.googleusercontent.com" data-context="signup" data-ux_mode="popup" data-login_uri="https://smailia.fr/pages/auth.php" data-callback="handleCredentialResponse" data-auto_prompt="false">
-            </div>
-
-            <div class="g_id_signin" data-type="icon" data-shape="pill" data-theme="filled_blue" data-text="signup_with" data-locale="fr" data-logo_alignment="center">
-            </div>
-        </div>
     </div>
     <p style="margin: unset; font-size: medium; align-self: center">
         Vous possédez déja un compte ?
