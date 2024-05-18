@@ -1,7 +1,6 @@
 <?php
-$user = 'dbu2518744';
-$pass = 'Exxolia09062023xZk#';
-$host= 'db5013327519.hosting-data.io';
-$db = 'dbs11176156';
-$dbport = '3306';
-?>
+    $user = 'if0_36566229';
+    $pass = 'MO3oTWVw5K7';
+    $host= 'sql301.infinityfree.com';
+    $db = 'if0_36566229_messagerie_mini_projet';
+    $dbport = '3306';

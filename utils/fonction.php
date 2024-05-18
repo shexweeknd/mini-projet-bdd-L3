@@ -1,23 +1,34 @@
 <?php
 ob_start();
 include("../utils/db_connect.php");
+
+//fonction de chiffrement
+function hashString($str)
+{
+    // hash du mdp avec l'algorithme sha256
+    $hashedStr = hash('sha256', $str);
+    return $hashedStr;
+}
+
 function issetEmail($email)
 {
     global $conn;
-    $query = "SELECT * FROM users";
+    $query = "SELECT * FROM utilisateur";
     $result = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_array($result)) {
-        if ($row['email'] == $email) {
+        if ($row['adresse_email'] == $email) {
             return true;
         }
     }
     return false;
 }
-function insertUser($nom, $prenom, $email, $mdp, $birthdate)
+function insertUser($nom, $prenom, $email, $mdp)
 {
     $response = null;
     global $conn;
-    $query = "insert into users(nom, prenom, email, creation_date, mdp, birthday) values('" . $nom . "','" . $prenom . "','" . $email . "',NOW(),'" . $mdp . "','" . $birthdate . "')";
+    $mdp = hashString($mdp);
+
+    $query = "insert into utilisateur(nom, prenom, adresse_email, date_inscription, mot_de_passe) values('" . $nom . "','" . $prenom . "','" . $email . "',NOW(),'" . $mdp . "')";
     if (issetEmail($email) == false) {
         if (mysqli_query($conn, $query)) {
             $response = array(
@@ -41,18 +52,19 @@ function insertUser($nom, $prenom, $email, $mdp, $birthdate)
 function isIssetUser($email, $mdp)
 {
     global $conn;
-    $query = "SELECT * FROM users where email='" . $email . "' and mdp='" . $mdp . "'";
+    $mdp = hashString($mdp);
+
+    $query = "SELECT * FROM utilisateur where adresse_email='" . $email . "' and mot_de_passe='" . $mdp . "'";
     $response = array();
     $result = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_array($result)) {
         $arrayRow = array();
-        $arrayRow['id'] = $row['id'];
+        $arrayRow['user_id'] = $row['user_id'];
         $arrayRow['nom'] = $row['nom'];
         $arrayRow['prenom'] = $row['prenom'];
-        $arrayRow['birthday'] = $row['birthday'];
-        $arrayRow['email'] = $row['email'];
-        $arrayRow['creation_date'] = $row['creation_date'];
-        $arrayRow['mdp'] = $row['mdp'];
+        $arrayRow['adresse_email'] = $row['adresse_email'];
+        $arrayRow['date_inscription'] = $row['date_inscription'];
+        $arrayRow['mot_de_passe'] = $row['mot_de_passe'];
         $response[] = $arrayRow;
     }
     $data = null;
@@ -70,60 +82,6 @@ function isIssetUser($email, $mdp)
         );
     }
     return $data;
-}
-function getActivity()
-{
-    global $conn;
-    $query = "SELECT * FROM activity";
-    $response = array();
-    $result = mysqli_query($conn, $query);
-    while ($row = mysqli_fetch_array($result)) {
-        $arrayRow = array();
-        $arrayRow['id'] = $row['id'];
-        $arrayRow['name'] = $row['name'];
-        $arrayRow['description'] = $row['description'];
-        $arrayRow['imgpath'] = $row['imgpath'];
-        $response[] = $arrayRow;
-    }
-
-    return $response;
-}
-function getEvent($id)
-{
-    global $conn;
-    $query = "SELECT * FROM events where activityId='" . $id . "'";
-    $response = array();
-    $result = mysqli_query($conn, $query);
-    while ($row = mysqli_fetch_array($result)) {
-        $arrayRow = array();
-        $arrayRow['id'] = $row['id'];
-        $arrayRow['activityId'] = $row['activityId'];
-        $arrayRow['subject'] = $row['subject'];
-        $arrayRow['description'] = $row['description'];
-        $arrayRow['date'] = $row['date'];
-        $arrayRow['time'] = $row['time'];
-        $arrayRow['duration'] = $row['duration'];
-        $arrayRow['imgpath'] = $row['imgpath'];
-        $response[] = $arrayRow;
-    }
-
-    return $response;
-}
-
-function getEventInfo($eventId, $dbh)
-{
-    $query = "SELECT e.id, a.name AS activityName, e.subject, e.description, e.date, e.time, e.duration, e.imgpath, e.state, COUNT(p.id) AS participants
-            FROM events e 
-            INNER JOIN activity a ON e.activityId = a.id
-            LEFT JOIN participations p ON e.id = p.eventId
-            WHERE e.id = :eventId";
-
-    $stmt = $dbh->prepare($query);
-    $stmt->bindParam(':eventId', $eventId, PDO::PARAM_INT);
-    $stmt->execute();
-
-    $eventData = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $eventData;
 }
 
 function formatDateFr($date)
@@ -147,18 +105,16 @@ function formatDateFr($date)
     return "$jour_semaine $jour $mois_annee $annee";
 }
 
-
 function isAdmin($email, $dbh)
 {
     $query = "SELECT u.role
-    FROM users u
+    FROM utilisateur u
     WHERE u.email = :email";
 
     $stmt = $dbh->prepare($query);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
 
-    // Récupération des résultats dans un tableau
     $userInfo = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($userInfo['role'] == 'admin') {
@@ -169,18 +125,17 @@ function isAdmin($email, $dbh)
 
 function getUserId($email, $dbh)
 {
-    $query = "SELECT u.id
-    FROM users u
-    WHERE u.email = :email";
+    $query = "SELECT u.user_id
+    FROM utilisateur u
+    WHERE u.adresse_email = :email";
 
     $stmt = $dbh->prepare($query);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
 
-    // Récupération des résultats dans un tableau
     $userInfo = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    return $userInfo['id'];
+    return $userInfo['user_id'];
 }
 
 function formatTimeFr($heure)
@@ -213,12 +168,6 @@ function additionnerTemps($temps1, $temps2)
     return $resultat;
 }
 
-function validerLienSkype($lien)
-{
-    $regex = '/\bhttps?:\/\/(?:join\.skype\.com\/)[a-zA-Z0-9-]+\b/';
-    return preg_match($regex, $lien);
-}
-
 function validateEmail($email)
 {
     $pattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
@@ -230,44 +179,3 @@ function validateEmail($email)
     }
 }
 
-
-function giveTicketNumber($ticketId, $date_soumission)
-{
-    // Convertir la date en format JJ-MM-AA
-    $formattedDate = date('d-m-y', strtotime($date_soumission));
-
-    // Créer le numéro de ticket en concaténant les éléments
-    $ticketNumber = "REPORT-$formattedDate-$ticketId";
-
-    return $ticketNumber;
-}
-
-//fonction de chiffrement
-function hashString($str)
-{
-    // Utilisez la fonction hash() avec l'algorithme MD5
-    $hashedStr = hash('sha256', $str);
-    return $hashedStr;
-}
-
-function generateLink($email, $mdp, $eventId)
-{
-    $result = "https://smailia.fr/utils/unparticipate.php?email=" . urlencode($email) . "&clientHash=" . hashString($email . $mdp) . "&eventId=" . $eventId;
-
-    return $result;
-}
-
-function generateParticipationLink($email, $mdp, $eventId)
-{
-    $result = "https://smailia.fr/utils/participate.php?email=" . urlencode($email) . "&clientHash=" . hashString($email . $mdp) . "&eventId=" . $eventId;
-
-    return $result;
-}
-
-function createAskingMail($email, $mdp)
-{
-    // faire en sorte que le mail de reset soit crée puis envoi du mail sur le mail du client
-    $result = "https://smailia.fr/utils/resetPwd.php?email=" . urlencode($email) . "&clientHash=" . hashString($email . $mdp);
-
-    return $result;
-}
