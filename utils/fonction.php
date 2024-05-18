@@ -49,6 +49,7 @@ function insertUser($nom, $prenom, $email, $mdp)
     }
     return $response;
 }
+
 function isIssetUser($email, $mdp)
 {
     global $conn;

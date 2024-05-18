@@ -5,9 +5,9 @@ $email = $_POST['email'];
 $mdp = $_POST['password'];
 $data = isIssetUser($email, $mdp);
 if ($data["type"] == '0') {
-    header("location:../pages/auth.php?message=" . $data['status_message']);
+    header("location:../index.php?message=" . $data['status_message']);
 } else {
     $_SESSION['user_connected'] = $data["data"];
-    $_SESSION['smailia'] = $data["data"][0];
-    header("location:../pages/" . $_POST['redirect']);
+    $_SESSION['username'] = $data["data"][2];
+    header("location:../" . $_POST['redirect']);
 }
