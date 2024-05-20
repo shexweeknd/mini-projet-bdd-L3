@@ -1,0 +1,17 @@
+Ce quide vous permettra de pusher sur le repo de groupe sur GitHub, les étapes sont généralement simplifiés.
+
+étape 1: recevoir et accepter l'inivation par mail de collaboration sur le repository concerne
+
+étape 2: aller dans parametres > Developper Settings > Personnal access tokens > Tokens (classic) ou en accédant a l'URL : https://github.com/settings/tokens .
+
+étape 3: Cliquer sur le boutton "Generate new token (classic)" du dropdown "Generate new token"
+
+étape 4: cocher le scope "repo", remplir "note" si besoin, et mettre la date d'expiration a "No expiration"
+
+étape 5: copier puis sauvegarder le token dans un fichier confidentiel pour les "git push" nécessiatant des authentification par mot de passe
+
+METHODE d'utilisation du token:
+
+> git add .
+> git commit -m "blabla"
+> git push
