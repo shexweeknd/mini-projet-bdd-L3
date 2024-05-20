@@ -15,3 +15,8 @@ METHODE d'utilisation du token:
 > git add .
 > git commit -m "blabla"
 > git push
+Username for 'https://github.com': ghp_sKbqUF0tk1mPVD8oPA6xki40QxKwnD3GRjsA
+Password for 'https://ghp_sKbqUF0tk1mPVD8oPA6xki40QxKwnD3GRjsA@github.com': [press Enter]
+
+Push Details ...
+OK
