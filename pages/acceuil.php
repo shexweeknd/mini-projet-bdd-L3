@@ -173,6 +173,7 @@ if (!isset($_SESSION['user_connected'])) {
 
 <script>
     $(document).ready(function() {
+        //deconnexion de l'utilisateur
         $('.dicsonnect-button').click(function() {
             $.ajax({
                 url: '../utils/logout.php', // The URL to the PHP file
@@ -186,6 +187,7 @@ if (!isset($_SESSION['user_connected'])) {
             });
         });
 
+        //envoi de message de l'utilisateur
         $('.send-message').click(function() {
             var contenu = document.querySelector("#message-to-send").value;
             $.ajax({
@@ -206,5 +208,27 @@ if (!isset($_SESSION['user_connected'])) {
                 }
             })
         })
+
+        //prendre tous les messages dans la base de donnée
+        function queryAllMessages() {
+            var user_id = "<?php echo $_SESSION['user_connected']['user_id'] ?>";
+            $.ajax({
+                url: '../utils/getMessages.php',
+                method: 'POST',
+                data: {
+                    userId: user_id,
+                },
+                succes: function(reponse) {
+                    console.log(response);
+                    return;
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    //TODO afficher un display error message qui reste permanent lorsqu'on ne recharge pas la page HTML
+                    alert("Il n'y a aucun message dans la base de donnée...");
+                }
+            })
+        }
+
+        queryAllMessages();
     });
 </script>

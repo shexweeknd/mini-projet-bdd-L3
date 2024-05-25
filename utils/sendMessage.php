@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['userId']) && isset($_P
     exit;
 }
 
-//TOVERIFY etape 1, verifier si l'user_id est bien dans la table utilisateur
+//etape 1, verifier si l'user_id est bien dans la table utilisateur
 $query = "SELECT * FROM utilisateur u WHERE u.user_id = :user_id";
 
 $stmt = $dbh->prepare($query);
