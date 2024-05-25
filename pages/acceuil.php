@@ -160,7 +160,7 @@ if (!isset($_SESSION['user_connected'])) {
         <div class="message-ch">
             <div>
                 <form action="">
-                    <input type="text" placeholder="Message">
+                    <input id="message-to-send" type="text" placeholder="Message">
                 </form>
             </div>
             <div class="send-message">
@@ -187,14 +187,18 @@ if (!isset($_SESSION['user_connected'])) {
         });
 
         $('.send-message').click(function() {
+            var contenu = document.querySelector("#message-to-send").value;
             $.ajax({
                 url: '../utils/sendMessage.php',
+                method: "POST",
                 data: {
-                    content: "blablabla",
-                    submitter: "<?php echo $_SESSION['user_connected']['user_id'] ?>",
+                    message: contenu,
+                    userId: "<?php echo $_SESSION['user_connected']['user_id'] ?>",
                 },
                 success: function(response) {
-                    //TODO ajouter en conéquence un message Right dans le container messsage-ji
+                    //TODO ajouter en conéquence un message Right dans le container messsage-container
+                    console.log(response);
+                    return;
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     //TODO afficher un display error message qui reste permanent lorsqu'on ne recharge pas la page HTML
