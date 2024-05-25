@@ -13,6 +13,7 @@ try {
     echo 'Erreur de base de données : ' . $e->getMessage();
     return;
 }
+$userId = $_POST['userId'];
 
 // etape 1, verifier si l'user_id est bien dans la table utilisateur
 $query = "SELECT * FROM utilisateur u WHERE u.user_id = :user_id";
@@ -29,7 +30,14 @@ if (!isset($userInfo)) {
 }
 
 // query des messages dans la base de donnée
-$query = "SELECT * FROM message";
+/*
+$query = "SELECT m.message_id, m.date_envoi, m.expediteur, m.contenu, u.nom, u.prenom 
+          FROM message m 
+          JOIN utilisateur u ON m.expediteur = u.user_id 
+          ORDER BY m.date_envoi ASC";
+ */
+
+$query = "SELECT * FROM message ORDER BY date_envoi ASC";
 
 $stmt = $dbh->prepare($query);
 $stmt->execute();

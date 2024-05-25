@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
     .message-so {
         font-size: 1rem;
         display: flex;
@@ -20,7 +20,7 @@
         margin-top: 0px;
         font-size: 1rem;
     }
-</style>
+</style> -->
 
 <div class="mess1">
     <div style="width: 100%; height: 8px; display: flex; justify-content: center; font-size: 0.7rem;">
