@@ -14,7 +14,7 @@ try {
     return;
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['userId']) && isset($_POST['message'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['userId']) && isset($_POST['message']) && $_POST['message'] != "") {
     $userId = $_POST['userId'];
     $contenu = $_POST['message'];
     $dateEnvoi = date('Y-m-d H:i:s');

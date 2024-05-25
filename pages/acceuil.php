@@ -228,7 +228,6 @@ if (!isset($_SESSION['user_connected'])) {
                 }
             })
         }
-
         queryAllMessages();
     });
 </script>
