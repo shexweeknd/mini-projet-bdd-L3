@@ -166,3 +166,20 @@ if (!isset($_SESSION['user_connected'])) {
         </div>
     </div>
 </section>
+
+<script>
+    $(document).ready(function() {
+        $('.dicsonnect-button').click(function() {
+            $.ajax({
+                url: '../utils/logout.php', // The URL to the PHP file
+                success: function(response) {
+                    console.log("déconnexion...");
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log("aucune session correspondante...");
+                    window.location.href = "../index.php";
+                }
+            });
+        });
+    });
+</script>

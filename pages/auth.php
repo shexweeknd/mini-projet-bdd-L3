@@ -30,7 +30,7 @@ if (isset($_SESSION['username'])) {
     /* Proper content */
     .auth-section {
         display: flex;
-        flex-redirect: column;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -41,7 +41,7 @@ if (isset($_SESSION['username'])) {
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        flex-redirect: column;
+        flex-direction: column;
         width: -webkit-fill-available;
     }
 
