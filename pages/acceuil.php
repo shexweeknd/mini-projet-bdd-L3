@@ -1,4 +1,8 @@
 <?php
+error_reporting(E_ALL);
+
+include_once "elements/header.php";
+
 // Redirection vers la page de connexion si non connecté
 if (!isset($_SESSION['user_connected'])) {
     header('Location: index.php');
@@ -7,45 +11,52 @@ if (!isset($_SESSION['user_connected'])) {
 ?>
 
 <style>
-    * {
+    *,
+    .app-title h1 {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: Arial, Helvetica, sans-serif;
     }
 
-    .title {
+    .app-title {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         background-color: #333;
         color: #75eaff;
         font-size: 2.1rem;
         padding: 15px;
     }
 
+    .app-title h1 {
+        color: #75eaff;
+        font-weight: bold;
+    }
+
     .bienvenu {
-        display: flex;
+        display: inline-flex;
         justify-content: center;
-        margin-top: 50px;
+        align-items: center;
+        gap: 1rem;
         font-size: 1.8rem;
+        color: white;
+        margin: 0
     }
 
     .message-ji {
-
-        margin: 50px 100px 50px 100px;
+        padding: 1rem 100px 1rem 100px;
+        height: 70vh;
+        width: 100vw;
     }
 
-    .message-so {
-        margin-top: 30px;
-        font-size: 1.1rem;
-
-    }
-
-    .date_heure {
+    .message-ji::before {
+        content: "";
         display: flex;
-        justify-content: end;
-        margin-top: 8px;
-        font-size: 0.7rem;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, .3);
+        border: 1px solid gray;
+        border-radius: 5px
     }
 
     .message-ch {
@@ -65,16 +76,9 @@ if (!isset($_SESSION['user_connected'])) {
 
     }
 
-
     img {
         width: 50px;
         height: auto;
-    }
-
-    .message-so {
-        display: flex;
-        flex-direction: row;
-        gap: 15px;
     }
 
     .init {
@@ -113,25 +117,52 @@ if (!isset($_SESSION['user_connected'])) {
     }
 </style>
 
+<style>
+    .userspace {
+        display: inline-flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .dicsonnect-button {
+        width: 50px;
+        height: auto;
+        cursor: pointer;
+    }
+
+    .message-wrapper {
+        width: auto;
+        max-height: -webkit-fill-available;
+        display: inline-flex;
+        flex-direction: column;
+        padding: 2rem 0 0 0;
+    }
+</style>
+
 <section>
-    <div class="title">
+    <div class="app-title">
         <h1>Yoyo Chat</h1>
-    </div>
-    <p class="bienvenu">Bienvenu <?php echo $_SESSION["username"] ?></p>
-    <div class="message-ji">
-
-        <?php include_once "../elements/message_left.php" ?>
-
-    </div>
-    <div class="message-ch">
-        <div>
-            <form action="">
-                <input type="text" placeholder="Message">
-            </form>
+        <div class="userspace">
+            <p class="bienvenu"><?php echo $_SESSION["username"] ?></p>
+            <div class="dicsonnect-button">
+                <img src="../assets/img/switch.png" />
+            </div>
         </div>
-        <div class="bouton">
-            <div class="cerc"><img src="../assets/img/cercle (2).png" alt=""></div>
-            <div class="env"><img src="../assets/img/envoyer.png" alt=""></div>
+    </div>
+    <div class="message-wrapper">
+        <div class="message-ji">
+            <?php include_once "../elements/message_left.php" ?>
+        </div>
+        <div class="message-ch">
+            <div>
+                <form action="">
+                    <input type="text" placeholder="Message">
+                </form>
+            </div>
+            <div class="bouton">
+                <div class="cerc"><img src="../assets/img/cercle (2).png" alt=""></div>
+                <div class="env"><img src="../assets/img/envoyer.png" alt=""></div>
+            </div>
         </div>
     </div>
 </section>
