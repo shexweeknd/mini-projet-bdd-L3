@@ -1,16 +1,16 @@
 <?php
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
+session_start();
 
 include("../utils/fonction.php");
-session_start();
 $email = $_POST['email'];
 $mdp = $_POST['password'];
 $data = isIssetUser($email, $mdp);
 if ($data["type"] == '0') {
-    header("location:../index.php?message=" . $data['status_message']);
+    header("Location: ../index.php?message=" . $data['status_message']);
 } else {
-    $_SESSION['user_connected'] = $data["data"];
-    $_SESSION['username'] = $data["data"][2];
-    header("location:../" . $_POST['redirect']);
+    $_SESSION['user_connected'] = $data["data"][0];
+    $_SESSION['username'] = $_SESSION["user_connected"]["prenom"] . " " . $_SESSION['user_connected']["nom"];
+    header("Location: ../index.php");
 }
