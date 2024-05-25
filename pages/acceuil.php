@@ -89,8 +89,15 @@ if (!isset($_SESSION['user_connected'])) {
 
     .send-message {
         position: relative;
+        cursor: pointer;
         right: 51.5px;
         top: 6.25px;
+        scale: 1;
+        transition: all .5s ease-in-out;
+    }
+
+    .send-message:hover {
+        scale: 1.1;
     }
 
     .cerc img {
@@ -122,6 +129,15 @@ if (!isset($_SESSION['user_connected'])) {
         width: 50px;
         height: auto;
         cursor: pointer;
+    }
+
+    .dicsonnect-button>img {
+        scale: .8;
+        transition: scale .5s ease-in-out;
+    }
+
+    .dicsonnect-button>img:hover {
+        scale: .9;
     }
 
     .message-wrapper {
@@ -173,7 +189,7 @@ if (!isset($_SESSION['user_connected'])) {
         <div class="userspace">
             <p class="bienvenu"><?php echo $_SESSION["username"] ?></p>
             <div class="dicsonnect-button">
-                <img src="../assets/img/switch.png" />
+                <img src="../assets/img/exit.png" />
             </div>
         </div>
     </div>
