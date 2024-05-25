@@ -49,9 +49,8 @@ if (!isset($_SESSION['user_connected'])) {
         width: 100vw;
     }
 
-    .message-ji::before {
-        content: "";
-        display: flex;
+    .message-container {
+        display: inline-flex;
         width: 100%;
         height: 100%;
         background-color: rgba(255, 255, 255, .3);
@@ -86,11 +85,6 @@ if (!isset($_SESSION['user_connected'])) {
         z-index: 1;
         bottom: 40px;
         left: 20px;
-    }
-
-    .mess {
-        margin-top: 8px;
-        font-size: 1.1rem;
     }
 
     .send-message {
@@ -137,6 +131,12 @@ if (!isset($_SESSION['user_connected'])) {
         flex-direction: column;
         padding: 2rem 0 0 0;
     }
+
+    .message-container {
+        display: inline-flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
 </style>
 
 <section>
@@ -151,8 +151,17 @@ if (!isset($_SESSION['user_connected'])) {
     </div>
     <div class="message-wrapper">
         <div class="message-ji">
-            <?php include_once "../elements/message_left.php" ?>
-            <!-- TODO prendre tous les messages presents dans la base de donné puis ajouter en conséquence les message_left ainsi que les message_right dans le cas ou l'user_id du message correspond a l'user_id present dans la session $_SESSION['user_connected']['user_id'] -->
+            <div class="message-container">
+                <?php include "elements/message_left.php" ?>
+                <?php include "elements/message_left.php" ?>
+                <?php include "elements/message_left.php" ?>
+                <?php include "elements/message_left.php" ?>
+                <?php include "elements/message_left.php" ?>
+                <?php include "elements/message_left.php" ?>
+                <?php include "elements/message_left.php" ?>
+                <?php include "elements/message_left.php" ?>
+                <!-- TODO prendre tous les messages presents dans la base de donné puis ajouter en conséquence les message_left ainsi que les message_right dans le cas ou l'user_id du message correspond a l'user_id present dans la session $_SESSION['user_connected']['user_id'] -->
+            </div>
         </div>
         <div class="message-ch">
             <div>

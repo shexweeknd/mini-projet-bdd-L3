@@ -1,10 +1,10 @@
 <style>
     .message-so {
-        margin-top: 30px;
-        font-size: 1.1rem;
+        font-size: 1rem;
         display: flex;
         flex-direction: row;
         gap: 15px;
+        height: 100%;
     }
 
     .date_heure {
@@ -12,6 +12,21 @@
         justify-content: end;
         margin-top: 8px;
         font-size: 0.7rem;
+    }
+
+    .mess1 {
+        width: 100%;
+        padding: 1rem;
+        max-height: 20%;
+    }
+
+    .mess1 .message-owner {
+        font-size: medium;
+    }
+
+    .mess1 .message-value {
+        margin-top: 0px;
+        font-size: 1rem;
     }
 </style>
 
@@ -27,9 +42,9 @@
         </div>
         <div>
             <div>
-                <h3>@Teggy</h3>
+                <h3 class="message-owner">@Teggy</h3>
             </div>
-            <div class="mess">
+            <div class="message-value">
                 Lorem ipsum, dolor sit amet consectetur
                 adipisicing elit. Commodi, molestias e
                 t at earum nemo dolorum praesentium quaerat
