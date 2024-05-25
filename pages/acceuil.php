@@ -106,7 +106,6 @@ if (!isset($_SESSION['user_connected'])) {
         object-fit: contain;
     }
 
-
     .env img {
         width: 25px;
     }
@@ -180,6 +179,7 @@ if (!isset($_SESSION['user_connected'])) {
         color: white;
         border-radius: 25px;
         padding: 10px;
+        width: fit-content;
     }
 </style>
 
@@ -196,7 +196,7 @@ if (!isset($_SESSION['user_connected'])) {
     <div class="message-wrapper">
         <div class="message-ji">
             <div class="message-container">
-                <!-- TODO prendre tous les messages presents dans la base de donné puis ajouter en conséquence les message_left ainsi que les message_right dans le cas ou l'user_id du message correspond a l'user_id present dans la session $_SESSION['user_connected']['user_id'] -->
+                <!-- prendre tous les messages presents dans la base de donné puis ajouter en conséquence les message_left ainsi que les message_right dans le cas ou l'user_id du message correspond a l'user_id present dans la session $_SESSION['user_connected']['user_id'] -->
             </div>
         </div>
         <div class="message-ch">
@@ -256,10 +256,9 @@ if (!isset($_SESSION['user_connected'])) {
 
         function supplyMessageContainer(allNewMessages) {
             allNewMessages.forEach(item => {
-                console.log(`${item.contenu} ${item.date_envoi} ${item.expediteur}`);
                 var elemToFetch = "message_left.php";
 
-                if (item.expediteur == "<?php echo $_SESSION['user_connected']['userId'] ?>") {
+                if (item.expediteur == "<?php echo $_SESSION['user_connected']['user_id'] ?>") {
                     elemToFetch = "message_right.php";
                 }
 
@@ -273,9 +272,14 @@ if (!isset($_SESSION['user_connected'])) {
                         messageValue.textContent = item.contenu;
                     }
 
+                    const avatarContent = doc.querySelector('.avatar-content');
+                    if (avatarContent) {
+                        avatarContent.textContent = item.prenom.charAt(0).toUpperCase();
+                    }
+
                     const messageOwner = doc.querySelector('.message-owner');
                     if (messageOwner) {
-                        messageOwner.textContent = item.expediteur;
+                        messageOwner.textContent = item.prenom + ' ' + item.nom;
                     }
 
                     const dateHeure = doc.querySelector('.date_heure');

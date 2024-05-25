@@ -8,10 +8,10 @@
                 <img src=" ../assets/img/cercle (1).png" alt="">
             </div>
             <div class="init">
-                <h4>T</h4>
+                <h4 class="avatar-content">T</h4>
             </div>
         </div>
-        <div>
+        <div style="width: -webkit-fill-available;">
             <div>
                 <h3 class="message-owner">@Teggy</h3>
             </div>

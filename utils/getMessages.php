@@ -30,14 +30,10 @@ if (!isset($userInfo)) {
 }
 
 // query des messages dans la base de donnée
-/*
-$query = "SELECT m.message_id, m.date_envoi, m.expediteur, m.contenu, u.nom, u.prenom 
+$query = "SELECT m.message_id, m.date_envoi, m.expediteur, m.contenu, u.nom, u.prenom
           FROM message m 
-          JOIN utilisateur u ON m.expediteur = u.user_id 
+          INNER JOIN utilisateur u ON m.expediteur = u.user_id 
           ORDER BY m.date_envoi ASC";
- */
-
-$query = "SELECT * FROM message ORDER BY date_envoi ASC";
 
 $stmt = $dbh->prepare($query);
 $stmt->execute();

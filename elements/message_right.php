@@ -27,11 +27,11 @@
         <p class="date_heure">01/05/2024 13:15</p>
     </div>
     <div class="message-so">
-        <div>
+        <div style="width: -webkit-fill-available;">
             <div style="display: flex; justify-content: flex-end">
                 <h3 class="message-owner">@Teggy</h3>
             </div>
-            <div style="padding: 0 0 0 5rem">
+            <div style="padding: 0 0 0 5rem;display: flex; justify-content: end;">
                 <p class="message-value">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis iste error voluptates odit esse distinctio voluptas ad sapiente, quis cum nisi. Perferendis nostrum enim magni quidem, repellendus cumque. Sunt exercitationem quibusdam accusantium velit possimus delectus quas. Molestias dolores consequuntur asperiores, tempora repudiandae corrupti aut nostrum, est tenetur incidunt perspiciatis deleniti optio placeat consequatur iste rerum in officia adipisci vero veniam repellat accusantium doloremque inventore. Aperiam eveniet, animi ea accusamus molestias fugiat sunt sint quidem beatae iure voluptatem? Et voluptatum sit provident magni earum repellendus rem dolor quaerat, quas, ullam totam deleniti odit unde dicta. Sint autem assumenda facilis non praesentium?
                 </p>
