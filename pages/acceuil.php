@@ -93,7 +93,7 @@ if (!isset($_SESSION['user_connected'])) {
         font-size: 1.1rem;
     }
 
-    .bouton {
+    .send-message {
         position: relative;
         right: 51.5px;
         top: 6.25px;
@@ -152,6 +152,7 @@ if (!isset($_SESSION['user_connected'])) {
     <div class="message-wrapper">
         <div class="message-ji">
             <?php include_once "../elements/message_left.php" ?>
+            <!-- TODO prendre tous les messages presents dans la base de donné puis ajouter en conséquence les message_left ainsi que les message_right dans le cas ou l'user_id du message correspond a l'user_id present dans la session $_SESSION['user_connected']['user_id'] -->
         </div>
         <div class="message-ch">
             <div>
@@ -159,7 +160,7 @@ if (!isset($_SESSION['user_connected'])) {
                     <input type="text" placeholder="Message">
                 </form>
             </div>
-            <div class="bouton">
+            <div class="send-message">
                 <div class="cerc"><img src="../assets/img/cercle (2).png" alt=""></div>
                 <div class="env"><img src="../assets/img/envoyer.png" alt=""></div>
             </div>
@@ -181,5 +182,22 @@ if (!isset($_SESSION['user_connected'])) {
                 }
             });
         });
+
+        $('.send-message').click(function() {
+            $.ajax({
+                url: '../utils/sendMessage.php',
+                data: {
+                    content: "blablabla",
+                    submitter: "<?php echo $_SESSION['user_connected']['user_id'] ?>",
+                },
+                success: function(response) {
+                    //TODO ajouter en conéquence un message Right dans le container messsage-ji
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    //TODO afficher un display error message qui reste permanent lorsqu'on ne recharge pas la page HTML
+                    alert("message non envoyé...");
+                }
+            })
+        })
     });
 </script>
