@@ -7,17 +7,9 @@
         height: 100%;
     }
 
-    .date_heure {
-        display: flex;
-        justify-content: end;
-        margin-top: 8px;
-        font-size: 0.7rem;
-    }
-
     .mess1 {
         width: 100%;
         padding: 1rem;
-        max-height: 20%;
     }
 
     .mess1 .message-owner {
@@ -31,6 +23,9 @@
 </style>
 
 <div class="mess1">
+    <div style="width: 100%; height: 8px; display: flex; justify-content: center; font-size: 0.7rem;">
+        <p class="date_heure">01/05/2024 13:15</p>
+    </div>
     <div class="message-so">
         <div class="avatar">
             <div class="cercle">
@@ -44,15 +39,11 @@
             <div>
                 <h3 class="message-owner">@Teggy</h3>
             </div>
-            <div class="message-value">
-                Lorem ipsum, dolor sit amet consectetur
-                adipisicing elit. Commodi, molestias e
-                t at earum nemo dolorum praesentium quaerat
-                laudantium mollitia provident vel deserunt
-                cum est dolorem expedita quam. Dignissimos,
-                quia voluptate?
+            <div style="padding: 0 5rem 0 0;">
+                <p class="message-value">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis iste error voluptates odit esse distinctio voluptas ad sapiente, quis cum nisi. Perferendis nostrum enim magni quidem, repellendus cumque. Sunt exercitationem quibusdam accusantium velit possimus delectus quas. Molestias dolores consequuntur asperiores, tempora repudiandae corrupti aut nostrum, est tenetur incidunt perspiciatis deleniti optio placeat consequatur iste rerum in officia adipisci vero veniam repellat accusantium doloremque inventore. Aperiam eveniet, animi ea accusamus molestias fugiat sunt sint quidem beatae iure voluptatem? Et voluptatum sit provident magni earum repellendus rem dolor quaerat, quas, ullam totam deleniti odit unde dicta. Sint autem assumenda facilis non praesentium?
+                </p>
             </div>
         </div>
     </div>
-    <div class="date_heure">01/05/2024 13:15</div>
 </div>

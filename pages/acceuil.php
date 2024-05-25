@@ -153,13 +153,7 @@ if (!isset($_SESSION['user_connected'])) {
         <div class="message-ji">
             <div class="message-container">
                 <?php include "elements/message_left.php" ?>
-                <?php include "elements/message_left.php" ?>
-                <?php include "elements/message_left.php" ?>
-                <?php include "elements/message_left.php" ?>
-                <?php include "elements/message_left.php" ?>
-                <?php include "elements/message_left.php" ?>
-                <?php include "elements/message_left.php" ?>
-                <?php include "elements/message_left.php" ?>
+                <?php include "elements/message_right.php" ?>
                 <!-- TODO prendre tous les messages presents dans la base de donné puis ajouter en conséquence les message_left ainsi que les message_right dans le cas ou l'user_id du message correspond a l'user_id present dans la session $_SESSION['user_connected']['user_id'] -->
             </div>
         </div>
