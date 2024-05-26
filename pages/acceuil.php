@@ -71,7 +71,7 @@ if (!isset($_SESSION['user_connected'])) {
         font-size: 1.2rem;
         padding-left: 25px;
         border-radius: 50px;
-        border: solid #21bfdb;
+        border: 1px solid #21bfdb;
 
     }
 
@@ -196,16 +196,15 @@ if (!isset($_SESSION['user_connected'])) {
     <div class="message-wrapper">
         <div class="message-ji">
             <div class="message-container">
-                <!-- prendre tous les messages presents dans la base de donné puis ajouter en conséquence les message_left ainsi que les message_right dans le cas ou l'user_id du message correspond a l'user_id present dans la session $_SESSION['user_connected']['user_id'] -->
             </div>
         </div>
         <div class="message-ch">
             <div>
-                <form action="">
-                    <input id="message-to-send" type="text" placeholder="Message">
+                <form id="message-form" action="">
+                    <input id="message-to-send" class="form-control" type="text" placeholder="Message">
                 </form>
             </div>
-            <div class="send-message">
+            <div type="submit" class="send-message">
                 <div class="cerc"><img src="../assets/img/cercle (2).png" alt=""></div>
                 <div class="env"><img src="../assets/img/envoyer.png" alt=""></div>
             </div>
@@ -215,6 +214,12 @@ if (!isset($_SESSION['user_connected'])) {
 
 <script>
     $(document).ready(function() {
+
+        document.getElementById('message-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+            sendMessage(); // Appelle la fonction sendMessage
+        });
+
         //deconnexion de l'utilisateur
         $('.dicsonnect-button').click(function() {
             $.ajax({
@@ -229,8 +234,7 @@ if (!isset($_SESSION['user_connected'])) {
             });
         });
 
-        //envoi de message de l'utilisateur
-        $('.send-message').click(function() {
+        function sendMessage() {
             var contenu = document.querySelector("#message-to-send").value;
             $.ajax({
                 url: '../utils/sendMessage.php',
@@ -249,8 +253,10 @@ if (!isset($_SESSION['user_connected'])) {
                     //TODO afficher un display error message qui reste permanent lorsqu'on ne recharge pas la page HTML
                     alert("message non envoyé...");
                 }
-            })
-        })
+            });
+        }
+        //envoi de message de l'utilisateur
+        $('.send-message').click(sendMessage);
 
         //prendre tous les messages dans la base de donnée
         var allMessages = new Array();
@@ -266,7 +272,9 @@ if (!isset($_SESSION['user_connected'])) {
             const messageContainer = document.querySelector('.message-container');
             const lastMessage = messageContainer.lastElementChild;
             if (lastMessage) {
-                lastMessage.scrollIntoView({ behavior: 'smooth' });
+                lastMessage.scrollIntoView({
+                    behavior: 'smooth'
+                });
             }
         }
 
