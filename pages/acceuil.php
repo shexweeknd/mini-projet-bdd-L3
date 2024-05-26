@@ -255,14 +255,14 @@ if (!isset($_SESSION['user_connected'])) {
         var allMessages = new Array();
 
         function supplyMessageContainer(allNewMessages) {
-            allNewMessages.forEach(item => {
+            const fetchPromises = allNewMessages.map(item => {
                 var elemToFetch = "message_left.php";
 
                 if (item.expediteur == "<?php echo $_SESSION['user_connected']['user_id'] ?>") {
                     elemToFetch = "message_right.php";
                 }
 
-                fetch("elements/" + elemToFetch).then(response => response.text()).then(data => {
+                return fetch("elements/" + elemToFetch).then(response => response.text()).then(data => {
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(data, 'text/html');
 
@@ -287,8 +287,14 @@ if (!isset($_SESSION['user_connected'])) {
                         dateHeure.textContent = item.date_envoi;
                     }
 
-                    const messageContainer = document.querySelector('.message-container');
-                    messageContainer.appendChild(doc.body.firstChild);
+                    return doc.body.firstChild;
+                });
+            });
+
+            Promise.all(fetchPromises).then(elements => {
+                const messageContainer = document.querySelector('.message-container');
+                elements.forEach(element => {
+                    messageContainer.appendChild(element);
                 });
             });
         }
