@@ -253,6 +253,13 @@ if (!isset($_SESSION['user_connected'])) {
 
         //prendre tous les messages dans la base de donnée
         var allMessages = new Array();
+        var isFetching = false;
+        var retryCount = 0;
+        var maxRetries = 5;
+
+        function displayNotification(message, type) {
+            alert(message);
+        }
 
         function supplyMessageContainer(allNewMessages) {
             const fetchPromises = allNewMessages.map(item => {
@@ -287,11 +294,14 @@ if (!isset($_SESSION['user_connected'])) {
                         dateHeure.textContent = item.date_envoi;
                     }
 
-                    return doc.body.firstChild;
+                    const messageElement = doc.body.firstChild;
+                    messageElement.id = `message-${item.message_id}`;
+
+                    return messageElement;
                 });
             });
 
-            Promise.all(fetchPromises).then(elements => {
+            return Promise.all(fetchPromises).then(elements => {
                 const messageContainer = document.querySelector('.message-container');
                 elements.forEach(element => {
                     messageContainer.appendChild(element);
@@ -299,30 +309,105 @@ if (!isset($_SESSION['user_connected'])) {
             });
         }
 
-
         function queryAllMessages() {
             var user_id = "<?php echo $_SESSION['user_connected']['user_id'] ?>";
-            console.log("appel du fichier avec ajax");
+            console.log("demande tous les messages...");
             $.ajax({
                 url: '../utils/getMessages.php',
                 method: "POST",
                 data: {
+                    op: "all",
                     userId: user_id,
                 },
                 success: function(response) {
                     console.log(response);
                     allMessages = JSON.parse(response);
-                    supplyMessageContainer(allMessages);
+                    supplyMessageContainer(allMessages).then(() => {
+                        retryCount = 0;
+                        startPolling();
+                    });
                     return;
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    //TODO afficher un display error message qui reste permanent lorsqu'on ne recharge pas la page HTML
-                    alert("Il n'y a aucun message dans la base de donnée...");
+                    displayNotification("Erreur de connexion. Réessai...", "error");
+                    if (retryCount < maxRetries) {
+                        retryCount++;
+                        setTimeout(queryAllMessages, 2000);
+                    } else {
+                        alert("Il n'y a aucun message dans la base de donnée...");
+                    }
                 }
-            })
+            });
+        }
+
+        function queryLastMessages(lastMessageId) {
+            if (isFetching) return;
+            isFetching = true;
+
+            var user_id = "<?php echo $_SESSION['user_connected']['user_id'] ?>";
+            console.log("demande les derniers messages apres " + lastMessageId + "...");
+            $.ajax({
+                url: '../utils/getMessages.php',
+                method: "POST",
+                data: {
+                    op: "after",
+                    userId: user_id,
+                    lastMessageId
+                },
+                success: function(response) {
+                    isFetching = false;
+                    lastMessages = JSON.parse(response);
+                    if (lastMessages['error']) {
+                        console.log(lastMessages['error']);
+                        return;
+                    } else {
+                        supplyMessageContainer(lastMessages).then(() => {
+                            console.log("nouveaux messages recus...");
+                            retryCount = 0;
+                        });
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    //TODO afficher un display error message qui reste permanent lorsqu'on ne recharge pas la page HTML
+                    isFetching = false;
+                    displayNotification("Erreur de connexion. Réessai...", "error");
+                    if (retryCount < maxRetries) {
+                        retryCount++;
+                        setTimeout(() => {
+                            queryLastMessages(lastMessageId);
+                        }, 2000);
+                    } else {
+                        alert("Il n'y a aucun message dans la base de donnée...");
+                    }
+                }
+            });
+        }
+
+        function getLatestMessageId() {
+            const messageContainer = document.querySelector('.message-container');
+            const messages = messageContainer.children;
+
+            if (messages.length === 0) {
+                return null;
+            }
+
+            const lastMessage = messages[messages.length - 1];
+
+            const lastMessageId = lastMessage.id;
+
+            const numericId = lastMessageId.split('-')[1];
+
+            return numericId;
+        }
+
+        function startPolling() {
+            // console.log(getLatestMessageId());
+            setInterval(() => {
+                queryLastMessages(getLatestMessageId());
+            }, 500);
         }
 
         queryAllMessages();
-
+        //TODO prendre l'Id du dernier message dans le message-container puis faire le polling avec la fonction queryLastMessages
     });
 </script>
