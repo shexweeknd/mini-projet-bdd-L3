@@ -240,8 +240,9 @@ if (!isset($_SESSION['user_connected'])) {
                     userId: "<?php echo $_SESSION['user_connected']['user_id'] ?>",
                 },
                 success: function(response) {
-                    //TODO ajouter en conéquence un message Right dans le container messsage-container
+                    //TODO ajouter en conséquence un message Right dans le container messsage-container
                     console.log(response);
+                    document.querySelector("#message-to-send").value = "";
                     return;
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
@@ -259,6 +260,14 @@ if (!isset($_SESSION['user_connected'])) {
 
         function displayNotification(message, type) {
             alert(message);
+        }
+
+        function scrollToLatestMessage() {
+            const messageContainer = document.querySelector('.message-container');
+            const lastMessage = messageContainer.lastElementChild;
+            if (lastMessage) {
+                lastMessage.scrollIntoView({ behavior: 'smooth' });
+            }
         }
 
         function supplyMessageContainer(allNewMessages) {
@@ -306,6 +315,8 @@ if (!isset($_SESSION['user_connected'])) {
                 elements.forEach(element => {
                     messageContainer.appendChild(element);
                 });
+
+                scrollToLatestMessage();
             });
         }
 
@@ -408,6 +419,5 @@ if (!isset($_SESSION['user_connected'])) {
         }
 
         queryAllMessages();
-        //TODO prendre l'Id du dernier message dans le message-container puis faire le polling avec la fonction queryLastMessages
     });
 </script>
